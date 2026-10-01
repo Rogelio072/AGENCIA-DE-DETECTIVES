@@ -27,7 +27,7 @@ public class Main {
         // Bucle para repetir el menú hasta que el usuario decida salir (opción 13)
         while (opcion != 13) {
             System.out.println("\n----------------- MENU -----------------");
-            System.out.println("1. Registrar un nuevo caso (reiniciar)");
+            System.out.println("1. Registrar un nuevo caso");
             System.out.println("2. Registrar ubicación");
             System.out.println("3. Consultar todas las ubicaciones");
             System.out.println("4. Consultar una ubicación específica");
@@ -88,7 +88,7 @@ public class Main {
 
                         } catch (InputMismatchException e) {
                             System.out.println("Error: Ingresó un texto en lugar de un número entero.");
-                            scanner.nextLine(); // Limpiar el error
+                            scanner.nextLine(); 
                         } catch (Exception e) {
                             System.out.println("Error al guardar: " + e.getMessage());
                         } finally {
@@ -271,9 +271,7 @@ public class Main {
                         break;
 
                     case 12:
-                        System.out.println("\n==========================================");
                         System.out.println("        REPORTE DE LA INVESTIGACION        ");
-                        System.out.println("==========================================");
                         System.out.println("Caso: " + casoActual.getNombreCaso() + " (Código: " + casoActual.getCodigoIdentificacion() + ")");
                         System.out.println("Detective responsable: " + casoActual.getDetectiveResponsable());
                         System.out.println("------------------------------------------");
@@ -300,7 +298,6 @@ public class Main {
                         } else {
                             System.out.println("No hay datos suficientes de pistas para mostrar los promedios y máximos.");
                         }
-                        System.out.println("==========================================\n");
                         break;
 
                     case 13:
@@ -314,7 +311,7 @@ public class Main {
 
             } catch (InputMismatchException e) {
                 System.out.println("¡Error! Debe ingresar un número entero para seleccionar la opción del menú.");
-                scanner.nextLine(); // Limpiamos la entrada del scanner para evitar bucles infinitos
+                scanner.nextLine();
             }
         }
 
